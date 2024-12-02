@@ -6,7 +6,7 @@
 /*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 22:50:26 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/11/30 23:00:10 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2024/12/02 15:21:48 by koseki.yusu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+#include <limits>
+#include <cmath>
 
 
 class ScalarConverter{
