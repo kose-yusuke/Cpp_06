@@ -6,7 +6,7 @@
 /*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 22:50:26 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/12/02 20:43:06 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2025/02/18 15:35:28 by koseki.yusu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <string>
 #include <iostream>
-
+#include <stdint.h>
 
 typedef struct Data
 {
