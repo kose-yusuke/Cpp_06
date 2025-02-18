@@ -6,7 +6,7 @@
 /*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 22:50:29 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/12/02 16:25:32 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2025/02/18 15:11:18 by koseki.yusu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ bool ScalarConverter::isCharLiteral(const std::string& literal) {
         return true;
     return false;
 }
-
 
 bool ScalarConverter::isIntLiteral(const std::string& literal) {
     char* end;
@@ -69,6 +68,8 @@ void printConversions(char c, int i, float f, double d, bool charValid) {
 
 
 void ScalarConverter::convert(const std::string& literal){
+    char* end;
+    
     try {
         if (isCharLiteral(literal))
         {
@@ -81,19 +82,19 @@ void ScalarConverter::convert(const std::string& literal){
         }
         else if(isIntLiteral(literal))
         {
-            int i = std::stoi(literal);
+            int i = static_cast<int>(std::strtol(literal.c_str(), &end, 10));
             bool charValid = (i >= 0 && i <= 127 && std::isprint(static_cast<char>(i)));
             printConversions(static_cast<char>(i), i, static_cast<float>(i), static_cast<double>(i), charValid);
         }
         else if(isFloatLiteral(literal))
         {
-            float f = std::stof(literal);
+            float f = std::strtof(literal.c_str(), &end);
             bool charValid = (f >= 0 && f <= 127 && std::isprint(static_cast<char>(f)));
             printConversions(static_cast<char>(f), static_cast<int>(f), f, static_cast<double>(f), charValid);
         }
         else if (isDoubleLiteral(literal)) 
         {
-            double d = std::stod(literal);
+            double d = std::strtod(literal.c_str(), &end);
             bool charValid = (d >= 0 && d <= 127 && std::isprint(static_cast<char>(d)));
             printConversions(static_cast<char>(d), static_cast<int>(d), static_cast<float>(d), d, charValid);
         }
