@@ -6,7 +6,7 @@
 /*   By: koseki.yusuke <koseki.yusuke@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:45:12 by koseki.yusu       #+#    #+#             */
-/*   Updated: 2024/12/04 13:06:29 by koseki.yusu      ###   ########.fr       */
+/*   Updated: 2025/02/18 15:55:05 by koseki.yusu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,12 @@ static Base *generate(void)
 	{
 	case 0:
 		return (new A());
-		break;
 	case 1:
 		return (new B());
-		break;
 	case 2:
 		return (new C());
-		break;
-	default:
-		perror("Error: fatal generation");
-		return (NULL);
 	}
+    return (NULL);
 }
 
 void identify(Base* p)
@@ -91,5 +86,6 @@ int main()
         }
         std::cout << std::endl;
     }
+
     return 0;
 }
